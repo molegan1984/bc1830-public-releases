@@ -1,2 +1,7 @@
-# bc1830-public-releases
-Approved public BC1830 reader releases and reviewed delivery tools
+# Публичные релизы БК1830
+
+Только принятые публичные читательские HTML и проверенные инструменты их доставки.
+
+`current.json` выбирает immutable release: архив содержит только `index.html`, `part-1.html`, `part-2.html`, `guest-journey.html`. Receiver проверяет SHA256, размеры и состав до переключения. Старые релизы остаются доступны для отката.
+
+`receiver.py` устанавливается один раз по закреплённому commit и SHA256; при регулярных обновлениях исполняемый код не скачивается и не запускается. `publish.py` публикует уже принятые файлы и проверяет фактический HTTP-результат.
